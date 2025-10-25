@@ -94,8 +94,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   _buildPasswordField(),
                   const SizedBox(height: 32),
                   _buildLoginButton(),
-                  const SizedBox(height: 16),
-                  _buildDemoCredentials(),
                 ],
               ),
             ),
@@ -208,73 +206,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
         );
       },
-    );
-  }
-
-  Widget _buildDemoCredentials() {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.blue.shade50,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.blue.shade200),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Demo Credentials:',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.blue.shade700,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            'Username: testuser',
-            style: TextStyle(color: Colors.blue.shade600),
-          ),
-          Text(
-            'Password: testpass',
-            style: TextStyle(color: Colors.blue.shade600),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            '💡 Note: User validation is performed before login',
-            style: TextStyle(
-              fontSize: 12,
-              color: Colors.blue.shade500,
-              fontStyle: FontStyle.italic,
-            ),
-          ),
-          const SizedBox(height: 2),
-          Text(
-            '⚠️ Try "wronguser" to see user not found error',
-            style: TextStyle(
-              fontSize: 11,
-              color: Colors.orange.shade600,
-              fontStyle: FontStyle.italic,
-            ),
-          ),
-          const SizedBox(height: 4),
-          Text(
-            '🔍 After login, search pets by tags: "friendly, cute, small"',
-            style: TextStyle(
-              fontSize: 11,
-              color: Colors.blue.shade500,
-              fontStyle: FontStyle.italic,
-            ),
-          ),
-          const SizedBox(height: 8),
-          TextButton(
-            onPressed: () {
-              _usernameController.text = 'testuser';
-              _passwordController.text = 'testpass';
-            },
-            child: const Text('Use Demo Credentials'),
-          ),
-        ],
-      ),
     );
   }
 
